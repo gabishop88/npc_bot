@@ -35,3 +35,4 @@ if __name__ == '__main__':
     intents.message_content = True
     client = NPCClient(intents=intents)
     client.run(keys['DISCORD_BOTKEY'])
+    
