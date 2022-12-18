@@ -1,4 +1,10 @@
-import discord
+import discord, json
+
+keys = {}
+with open('secrets.json', 'r') as f:
+    keys = json.load(f)
+
+print (keys)
 
 class NPCClient(discord.Client):
 
@@ -28,4 +34,4 @@ if __name__ == '__main__':
     intents = discord.Intents.default()
     intents.message_content = True
     client = NPCClient(intents=intents)
-    client.run('MTA1MjMxOTMzNzI1MzQ0MTY1Ng.GeMCco.JCWsyCk2TKk32Q4R7Q730d0cIBUwbUSLd8fJCE')
+    client.run(keys['DISCORD_BOTKEY'])
